@@ -1,17 +1,17 @@
 function cariModus(arr) {
    
     var result = -1;
-    var jumlahsama = 0;
+    var jumlah = 0;
     for(var i = 0; i < arr.length - 1; i ++){
         for(var j = 1; j < arr.length; j++){
         if(arr[i] === arr[j + i]){
-            jumlahsama = jumlahsama + 1;
+            jumlah = jumlah + 1;
         }
-        else if(jumlahsama > 1){
+        else if(jumlah > 1){
             result = -1;
         }
     }
-    if(jumlahsama === 1){
+    if(jumlah === 1){
         result = arr[i];
         break;
     }
