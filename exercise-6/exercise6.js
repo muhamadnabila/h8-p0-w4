@@ -1,17 +1,24 @@
 function digitPerkalianMinimum(angka) {
-    var arr = []
-    
-    for ( var i = 0; i <= angka; i++){
-        var temp = ''
-        for ( var j = 0; j <= angka; j++){
-            if ( i * j === angka){
-                temp += String(i) + String(j)
-                arr.push(temp)
-            } 
+    var angkaArr= [];
+    var angkaArr2=[];
+    for(var i=0; i<angka; i++){
+        if(angka % i === 0){
+        angkaArr.push(String(i) + String(angka/i));
+      
         }
     }
-    // console.log(arr)
-    return arr.sort(function(value1, value2) { return value1 < value2 })[0].length   
+    //console.log(angkaArr);
+ 
+    for (var i=0; i <angkaArr.length; i++){
+        angkaArr2.push(Number(angkaArr[i]));
+    }
+    //console.log(angkaArr2.sort(function(a,b){return a-b}));
+    if(angkaArr2.sort(function(a,b){return a-b})[0] === undefined){
+        return 2;
+    } 
+    else {
+        return String(angkaArr2.sort(function(a,b){return a-b})[0]).length;
+    }
 }
   
   // TEST CASES
